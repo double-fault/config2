@@ -27,6 +27,11 @@ blink_timeout = 15
 [font]
 size = 16.0
 
+[keyboard]
+bindings = [
+        { key = "F11", action = "ToggleFullscreen" }
+]
+
 [font.bold]
 family = "UbuntuMono Nerd Font"
 style = "Bold"
