@@ -22,3 +22,7 @@ end, { desc = '[S]earch [N]eovim config' })
 vim.keymap.set('n', '<leader>sa', function()
     builtin.find_files { cwd = vim.fn.stdpath('config') .. '/../alacritty' }
 end, { desc = '[S]earch [A]lacritty config' })
+
+vim.keymap.set('n', '<leader>st', function()
+    builtin.find_files { cwd = vim.fn.stdpath('config') .. '/../tmux' }
+end, { desc = '[S]earch [T]mux config' })
