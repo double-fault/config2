@@ -1,5 +1,4 @@
 -- Use <leader>sk followed by a search for "keymaps" to look at all the keymaps in here
-
 -- Reload neovim config with <leader>rc
 vim.keymap.set("n", "<C-g>", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer (keymaps)" })
 vim.keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>", { desc = "Focus file explorer (keymaps)" })
@@ -32,3 +31,17 @@ end, { desc = '[S]earch [A]lacritty config (keymaps)' })
 vim.keymap.set('n', '<leader>st', function()
     builtin.find_files { cwd = vim.fn.stdpath('config') .. '/../tmux' }
 end, { desc = '[S]earch [T]mux config (keymaps)' })
+
+--
+-- tabby.nvim keymaps
+vim.keymap.set("n", "<leader>tc", ":$tabnew<CR>")
+vim.keymap.set("n", "<leader>tx", ":tabclose<CR>")
+vim.keymap.set("n", "<C-t>", ":$tabnew<CR>", { noremap = true })
+vim.keymap.set("n", "<C-x>", ":tabclose<CR>", { noremap = true })
+
+vim.keymap.set("n", "<C-\\>", ":tabn<CR>", { noremap = true })
+vim.keymap.set("n", "<C-]>", ":tabp<CR>", { noremap = true })
+vim.keymap.set("i", "<C-\\>", "<Esc>:tabn<CR>a", { noremap = true })
+vim.keymap.set("i", "<C-]>", "<Esc>:tabp<CR>a", { noremap = true })
+vim.keymap.set("v", "<C-\\>", "<Esc>:tabn<CR>", { noremap = true })
+vim.keymap.set("v", "<C-]>", "<Esc>:tabp<CR>", { noremap = true })
