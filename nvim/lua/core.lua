@@ -13,6 +13,9 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
+-- vim tmux navigator
+vim.g.tmux_navigator_no_mappings = 1
+
 -- block cursor for all modes
 vim.opt.guicursor = "n-v-i-c:block"
 

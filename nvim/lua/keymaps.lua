@@ -33,15 +33,23 @@ vim.keymap.set('n', '<leader>st', function()
 end, { desc = '[S]earch [T]mux config (keymaps)' })
 
 --
+-- vim tmux navigator
+
+vim.keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>")
+vim.keymap.set("n", "<C-j>", "<Cmd>TmuxNavigateDown<cr>")
+vim.keymap.set("n", "<C-k>", "<Cmd>TmuxNavigateUp<cr>")
+vim.keymap.set("n", "<C-l>", "<Cmd>TmuxNavigateRight<cr>")
+
+--
 -- tabby.nvim keymaps
 vim.keymap.set("n", "<leader>tc", ":$tabnew<CR>")
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>")
 vim.keymap.set("n", "<C-t>", ":$tabnew<CR>", { noremap = true })
 vim.keymap.set("n", "<C-x>", ":tabclose<CR>", { noremap = true })
 
-vim.keymap.set("n", "<C-\\>", ":tabn<CR>", { noremap = true })
+vim.keymap.set("n", "<C-\\>", ":tabn<CR>", { noremap = true, unique = true })
 vim.keymap.set("n", "<C-]>", ":tabp<CR>", { noremap = true })
-vim.keymap.set("i", "<C-\\>", "<Esc>:tabn<CR>a", { noremap = true })
+vim.keymap.set("i", "<C-\\>", "<Esc>:tabn<CR>a", { noremap = true, unique = true })
 vim.keymap.set("i", "<C-]>", "<Esc>:tabp<CR>a", { noremap = true })
-vim.keymap.set("v", "<C-\\>", "<Esc>:tabn<CR>", { noremap = true })
+vim.keymap.set("v", "<C-\\>", "<Esc>:tabn<CR>", { noremap = true, unique = true })
 vim.keymap.set("v", "<C-]>", "<Esc>:tabp<CR>", { noremap = true })
