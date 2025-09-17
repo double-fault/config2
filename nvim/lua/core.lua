@@ -4,6 +4,8 @@ if v.major <= 0 and v.minor < 12 then
 	return
 end
 
+vim.g.have_nerd_font = true
+
 -- persistent undo
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("config") .. "/undo"
@@ -18,6 +20,9 @@ vim.g.tmux_navigator_no_mappings = 1
 
 -- block cursor for all modes
 vim.opt.guicursor = "n-v-i-c:block"
+
+-- highlight the word under the cursor
+vim.opt.updatetime = 300
 
 -- general stuff
 vim.loader.enable()

@@ -1,0 +1,2 @@
+1. Auto-format on file save (something like conform.nvim)?
+2. Snippet engine (like LuaSnip)?
