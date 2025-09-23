@@ -11,14 +11,14 @@ vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "[Y]ank current line to system 
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "[P]aste from system clipboard (keymaps)" })
 
 -- blink.cmp keymaps are mostly defaults, see plugins/blink.lua (https://cmp.saghen.dev/configuration/keymap.html#default)
--- Ctrl+Space has been remapped to Ctrl + q
+-- Ctrl+Space has been remapped to Ctrl + s
 
 --
 -- LSP keymaps
 
 vim.keymap.set("n", ";f", vim.lsp.buf.format, { desc = "LSP Format buffer (keymaps)" })
 vim.keymap.set("n", ";n", vim.lsp.buf.rename, { desc = "LSP Rename (keymaps)" })
-vim.keymap.set("n", ";h", "<cmd>ClangdSwitchSourceHeader<CR>", { desc = "LSP Switch source/header (keymaps)" })
+vim.keymap.set("n", ";h", "<cmd>LspClangdSwitchSourceHeader<CR>", { desc = "LSP Switch source/header (keymaps)" })
 vim.keymap.set("n", ";a", vim.lsp.buf.code_action, { desc = "LSP Code actions (keymaps)" })
 vim.keymap.set("n", ";r", require('telescope.builtin').lsp_references, { desc = "LSP references (keymaps)" })
 vim.keymap.set("n", ";i", require('telescope.builtin').lsp_implementations, { desc = "LSP implementation (keymaps)" })

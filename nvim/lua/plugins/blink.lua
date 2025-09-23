@@ -27,8 +27,15 @@ return {
         keymap = {
             preset = 'default',
 
+            ['<C-y>'] = { 'select_and_accept', 'fallback' },
+            ['<C-j>'] = { 'select_and_accept', 'fallback' },
+            ['<C-e>'] = { 'select_and_accept', 'fallback' },
+            ['<CR>'] = { 'select_and_accept', 'fallback' },
+
+            ['<C-l>'] = { 'hide', 'fallback' },
+
             ['<C-space>'] = false,                                            -- as this is my tmux prefix
-            ['<C-q'] = { 'show', 'show_documentation', 'hide_documentation' } -- let C-q do what C-space did
+            ['<C-s>'] = { 'show', 'show_documentation', 'hide_documentation' } -- let C-s do what C-space did
         },
 
         appearance = {
