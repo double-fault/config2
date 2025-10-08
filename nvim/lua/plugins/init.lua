@@ -1,13 +1,27 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        branch = 'master',
+        branch = "master",
         lazy = false,
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup({
-                ensure_installed = { "cpp", "python", "xml", "lua", "vim", "bash", "c", "diff", "html", "markdown",
-                                        "markdown_inline", "ruby", "vimdoc", "query" },
+                ensure_installed = {
+                    "cpp",
+                    "python",
+                    "xml",
+                    "lua",
+                    "vim",
+                    "bash",
+                    "c",
+                    "diff",
+                    "html",
+                    "markdown",
+                    "markdown_inline",
+                    "ruby",
+                    "vimdoc",
+                    "query",
+                },
                 auto_install = true,
                 highlight = {
                     enable = true,
@@ -18,20 +32,10 @@ return {
         end,
     },
     {
-        "nvim-lualine/lualine.nvim",
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        lazy = false,
-        config = function()
-            require('lualine').setup({
-                options = { theme = "dracula" }
-            })
-        end,
-    },
-    {
         "NMAC427/guess-indent.nvim",
         lazy = false,
         config = function()
-            require('guess-indent').setup()
+            require("guess-indent").setup()
         end,
-    }
+    },
 }
