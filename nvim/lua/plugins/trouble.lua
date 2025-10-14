@@ -9,5 +9,10 @@ return {
 			"<cmd>Trouble diagnostics toggle focus=true<cr>",
 			desc = "Diagnostics (Trouble)",
 		},
+		{
+			"<leader>zz",
+			"<cmd>Trouble diagnostics toggle filter.buf=0 focus=true<cr>",
+			desc = "Buffer Diagnostics (Trouble)",
+		},
 	},
 }
