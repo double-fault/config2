@@ -29,7 +29,10 @@ size = 16.0
 
 [keyboard]
 bindings = [
-        { key = "F11", action = "ToggleFullscreen" }
+        { key = "F11", action = "ToggleFullscreen" },
+        # See tmux config for the usage of the below two lines
+        { key = ";", mods = "Control", chars = "\uE000" },
+        { key = "'", mods = "Control", chars = "\uE001" }
 ]
 
 [font.bold]

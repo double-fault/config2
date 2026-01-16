@@ -11,7 +11,7 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 
 		-- Useful status updates for LSP.
-		{ "j-hui/fidget.nvim", opts = {} },
+		{ "j-hui/fidget.nvim",    opts = {} },
 
 		-- Allows extra capabilities provided by blink.cmp
 		"saghen/blink.cmp",
@@ -52,14 +52,24 @@ return {
 					})
 				end
 
+				--[[
+				Format on save, disabling for llvm ffs should make a shortcut to enable/disable somehow
 				vim.api.nvim_create_autocmd("BufWritePre", {
 					buffer = event.buf,
 					callback = function()
 						vim.lsp.buf.format({ async = false, id = event.data.client_id })
 					end,
 				})
+				]]
 
-				require("workspace-diagnostics").populate_workspace_diagnostics(client, event.buf)
+				vim.api.nvim_set_keymap("n", "<leader>w", "", {
+					noremap = true,
+					callback = function()
+						for _, client in ipairs(vim.lsp.get_clients()) do
+							require("workspace-diagnostics").populate_workspace_diagnostics(client, 0)
+						end
+					end,
+				})
 			end,
 		})
 
@@ -95,7 +105,16 @@ return {
 		-- Enable the following language servers
 		--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 		local servers = {
-			clangd = {},
+			clangd = {
+				cmd = {
+					"clangd",
+					"--background-index=false", -- no background index
+					"--clang-tidy=false",
+					"--limit-results=200",
+					"--completion-style=detailed",
+					"--header-insertion=never",
+				},
+			},
 			-- gopls = {},
 			pyright = {},
 			-- rust_analyzer = {},

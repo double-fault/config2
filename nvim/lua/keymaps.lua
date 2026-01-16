@@ -21,6 +21,10 @@ vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "[P]aste from system c
 vim.keymap.set("n", ";f", vim.lsp.buf.format, { desc = "LSP Format buffer (keymaps)" })
 vim.keymap.set("n", ";n", vim.lsp.buf.rename, { desc = "LSP Rename (keymaps)" })
 vim.keymap.set("n", ";h", "<cmd>LspClangdSwitchSourceHeader<CR>", { desc = "LSP Switch source/header (keymaps)" })
+vim.keymap.set("n", ";v", function()
+	vim.cmd("vsplit")
+	vim.cmd("LspClangdSwitchSourceHeader")
+end, { desc = "LSP Switch source/header in new vertical split (keymaps)" })
 vim.keymap.set("n", ";a", vim.lsp.buf.code_action, { desc = "LSP Code actions (keymaps)" })
 vim.keymap.set("n", ";r", require("telescope.builtin").lsp_references, { desc = "LSP references (keymaps)" })
 vim.keymap.set("n", ";i", require("telescope.builtin").lsp_implementations, { desc = "LSP implementation (keymaps)" })
@@ -39,6 +43,10 @@ vim.keymap.set(
 	{ desc = "LSP Open workspace symbols (keymaps)" }
 )
 vim.keymap.set("n", ";t", require("telescope.builtin").lsp_type_definitions, { desc = "LSP type definition (keymaps)" })
+vim.keymap.set("n", ";x", "<cmd>close<CR>", { desc = "Close split (keymaps)" })
+vim.keymap.set("n", ";z", "<cmd>bd<CR>", { desc = "Close buffer (keymaps)" })
+vim.keymap.set("n", ";c", "<C-W>x", { desc = "Rotate windows (split?) (keymaps)" })
+vim.keymap.set("n", ";q", "<cmd>TodoTelescope<CR>", { desc = "Open todo list (keymaps) " })
 
 --
 -- Telescope keymaps

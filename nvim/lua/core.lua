@@ -10,6 +10,9 @@ vim.g.have_nerd_font = true
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("config") .. "/undo"
 
+-- for rmagatti/auto-session
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 -- nvimtree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
